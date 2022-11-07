@@ -5,3 +5,29 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+Airport.destroy_all
+
+Airport.create([{
+  name: "Brisbane",
+  code: "BRIS"
+},
+{
+  name: "John F. Kennedy",
+  code: "JFK"
+},
+{
+  name: "Los Angeles",
+  code: "LAX"
+},
+{
+  name: "Narita",
+  code: "NRT"
+},
+{
+  name: "Gold Coast",
+  code: "OOL"
+}
+])
+
+p "Created 5 airports"
