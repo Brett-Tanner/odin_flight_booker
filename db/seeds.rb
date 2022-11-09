@@ -31,3 +31,54 @@ Airport.create([{
 ])
 
 p "Created 5 airports"
+
+Flight.destroy_all
+
+Flight.create([{
+  code: "XY322",
+  departure_time: "2022-12-18 12:59:59",
+  arrival_time: "2022-12-19 12:59:59",
+  duration: 3.5,
+  ticket_price: 500,
+  arrival_airport_id: 1,
+  departure_airport_id: 2
+},
+{
+  code: "ZZ786",
+  departure_time: "2025-12-18 12:59:59",
+  arrival_time: "2025-12-19 12:59:59",
+  duration: 12,
+  ticket_price: 560,
+  arrival_airport_id: 3,
+  departure_airport_id: 4
+},
+{
+  code: "UU696",
+  departure_time: "2023-1-18 12:59:59",
+  arrival_time: "2023-1-19 14:59:59",
+  duration: 3.3,
+  ticket_price: 340,
+  arrival_airport_id: 5,
+  departure_airport_id: 1
+},
+{
+  code: "PP888",
+  departure_time: "2022-12-18 12:59:59",
+  arrival_time: "2022-12-18 13:30:00",
+  duration: 8.33,
+  ticket_price: 233,
+  arrival_airport_id: 4,
+  departure_airport_id: 2
+},
+{
+  code: "TRE45",
+  departure_time: "2022-2-10 10:00:00",
+  arrival_time: "2022-2-10 10:40:59",
+  duration: 3.67,
+  ticket_price: 898,
+  arrival_airport_id: 3,
+  departure_airport_id: 1
+}
+])
+
+p "Created 5 flights"
