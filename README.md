@@ -10,23 +10,21 @@
 - name STRING
 - code STRING
 
-- has_many :arriving_flights, class: "Flight",
-                              foreign_key: "id"
-- has_many :departing_flights, class: "Flight",
-                              foreign_key: "id"
+- has_many :arriving_flights, class_name: "Flight",
+                              foreign_key: "arrival_airport_id"
+- has_many :departing_flights, class_name: "Flight",
+                              foreign_key: "departure_airport_id"
 
 ### Flight
 - code STRING
 - departure_time DATETIME
 - arrival_time DATETIME
 - ticket_price INTEGER
-- origin FOREIGN KEY
-- destination FOREIGN KEY
+- departure_airport FOREIGN KEY
+- arrival_airport FOREIGN KEY
 
-- belongs_to :origin, class: "Airport",
-                      foreign_key: "id"
-- belongs_to :destination, class: "Airport",
-                           foreign_key: "id"
+- belongs_to :departure_airport, class_name: "Airport"
+- belongs_to :arrival_airport, class_name: "Airport"
 - has_many :passengers, through: :passenger_list
 
 ### Passenger
