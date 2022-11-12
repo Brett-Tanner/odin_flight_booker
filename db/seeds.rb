@@ -78,7 +78,16 @@ Flight.create([{
   ticket_price: 898,
   arrival_airport_id: 3,
   departure_airport_id: 1
+},
+{
+  code: "RET46",
+  departure_time: "2022-2-10 10:00:00",
+  arrival_time: "2022-2-10 10:40:59",
+  duration: 3.67,
+  ticket_price: 898,
+  arrival_airport_id: 3,
+  departure_airport_id: 1
 }
 ])
 
-p "Created 5 flights"
+p "Created 6 flights"

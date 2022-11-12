@@ -1,1 +1,21 @@
+<%= form_with url: root_path, method: :get do |form| %>
+    <div class="search_form_group">
+        <%= form.label :departure_airport_id, "Departure Airport" %>
+        <%= form.collection_select :departure_airport_id, Airport.order(:name), :id, :name %>
+    </div>
+    <div class="search_form_group">
+        <%= form.label :arrival_airport_id, "Arrival Airport" %>
+        <%= form.collection_select :arrival_airport_id, Airport.order(:name), :id, :name  %>
+    </div>
+    <div class="search_form_group">
+        <%= form.label :num_tickets, "Number of Tickets" %>
+        <%= form.select :num_tickets, [["1", 1], ["2", 2], ["3", 3], ["4", 4],] %>
+    </div>
+    <div class="search_form_group">
+        <%= form.label :date, "Flight Date" %>
+        <%= form.collection_select :departure_date, Flight.get_departure_dates, :departure_time, :formatted_departure_date %>
+    </div>
+    <%= form.submit "Search" %>
+<% end %>
+
 <%= render @flights %>

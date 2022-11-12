@@ -32,7 +32,7 @@
 
 - has_many :flights, through: :passenger_list
 
-### Passenger_list
+### Bookings
 - passenger_id FOREIGN KEY
 - flight_id FOREIGN KEY
 

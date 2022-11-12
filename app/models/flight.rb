@@ -3,5 +3,13 @@ class Flight < ApplicationRecord
   
   belongs_to :arrival_airport, class_name: "Airport"
 
+  def self.get_departure_dates
+    Flight.all.select(:departure_time).distinct.order(:departure_time)
+  end
+
+  def formatted_departure_date
+    departure_time.strftime("%d/%m/%Y")
+  end
+
   # Validate that destination is not same as departure
 end
