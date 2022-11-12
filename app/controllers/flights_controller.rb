@@ -1,9 +1,9 @@
 class FlightsController < ApplicationController
   def index
-    if params.blank?
-      @flights = Flight.all
-    else
+    if params.has_key?(:departure_date)
       @flights = Flight.where(departure_time: params[:departure_date], departure_airport_id: params[:departure_airport_id], arrival_airport_id: params[:arrival_airport_id])
+    else
+      @flights = Flight.all
     end
   end
 end
