@@ -112,3 +112,20 @@ Passenger.create {[
 ]}
 
 p "Created 4 passengers"
+
+Booking.create {[
+  {
+    num_tickets: 1
+  },
+  {
+    num_tickets: 3
+  },
+  {
+    num_tickets: 4
+  },
+  {
+    num_tickets: 2
+  }
+]}
+
+p "Created 4 bookings"
