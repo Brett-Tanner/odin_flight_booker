@@ -20,12 +20,13 @@
 - departure_time DATETIME
 - arrival_time DATETIME
 - ticket_price INTEGER
+- seats INTEGER
 - departure_airport FOREIGN KEY
 - arrival_airport FOREIGN KEY
 
 - belongs_to :departure_airport, class_name: "Airport"
 - belongs_to :arrival_airport, class_name: "Airport"
-- has_many :passengers, through: :passenger_list
+- has_many :passengers, through: :bookings
 
 ### Passenger
 - name STRING

@@ -92,7 +92,9 @@ Flight.create([{
 
 p "Created 6 flights"
 
-Passenger.create {[
+Passenger.destroy_all
+
+Passenger.create([
   {
     name: "Brett",
     email: "b@gmail.com"
@@ -109,23 +111,33 @@ Passenger.create {[
     name: "Kazuya",
     email: "k@gmail.com"
   }
-]}
+])
 
 p "Created 4 passengers"
 
-Booking.create {[
+Booking.destroy_all
+
+Booking.create([
   {
-    num_tickets: 1
+    num_tickets: 1,
+    flight_id: 1,
+    passenger_id: 2
   },
   {
-    num_tickets: 3
+    num_tickets: 3,
+    flight_id: 3,
+    passenger_id: 4
   },
   {
-    num_tickets: 4
+    num_tickets: 4,
+    flight_id: 4,
+    passenger_id: 2
   },
   {
-    num_tickets: 2
+    num_tickets: 2,
+    flight_id: 3,
+    passenger_id: 1
   }
-]}
+])
 
 p "Created 4 bookings"
