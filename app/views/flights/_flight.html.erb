@@ -1,9 +1,12 @@
-<div class="flight_info">
-    <%= flight.code %>
-    <%= flight.departure_airport.code %>
-    <%= flight.arrival_airport.code %>
-    <%= flight.departure_time %>
-    <%= flight.arrival_time %>
-    <%= flight.duration %>
-    <%= flight.ticket_price %>
+<div class="flight_select">
+    <%= form.label "flight_id_#{flight.id}" do %>
+        <%= flight.code %>
+        <%= flight.departure_airport.code %>
+        <%= flight.arrival_airport.code %>
+        <%= flight.departure_time.strftime("%H:%M %d/%m/%Y") %>
+        <%= flight.arrival_time.strftime("%H:%M %d/%m/%Y") %>
+        <%= flight.duration %>
+        <%= flight.ticket_price %>
+    <% end %>
+    <%= form.radio_button :flight_id, flight.id %>
 </div>

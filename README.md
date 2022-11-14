@@ -29,12 +29,14 @@
 
 ### Passenger
 - name STRING
+- email STRING
 
 - has_many :flights, through: :passenger_list
 
 ### Bookings
 - passenger_id FOREIGN KEY
 - flight_id FOREIGN KEY
+- num_tickets INTEGER
 
 - belongs_to :passenger
 - belongs_to :flight

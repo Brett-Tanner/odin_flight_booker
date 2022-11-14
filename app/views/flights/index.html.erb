@@ -18,4 +18,13 @@
     <%= form.submit "Search" %>
 <% end %>
 
-<%= render @flights %>
+<% if @flights.empty? %>
+  <p>No flights found!</p>
+<% else %>
+    <%# TODO: Link to Booking#new once it exists %>
+    <%= form_with url: "/", method: :get do |form| %>
+        <%= form.hidden_field "num_tickets", value: @num_tickets %>
+        <%= render @flights, form: form %>
+        <%= form.submit "Select Flight" %>
+    <% end %>
+<% end %>
