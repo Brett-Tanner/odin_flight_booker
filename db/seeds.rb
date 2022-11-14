@@ -91,3 +91,24 @@ Flight.create([{
 ])
 
 p "Created 6 flights"
+
+Passenger.create {[
+  {
+    name: "Brett",
+    email: "b@gmail.com"
+  },
+  {
+    name: "Vika",
+    email: "v@gmail.com"
+  },
+  {
+    name: "Dodd",
+    email: "d@gmail.com"
+  },
+  {
+    name: "Kazuya",
+    email: "k@gmail.com"
+  }
+]}
+
+p "Created 4 passengers"
