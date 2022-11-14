@@ -13,5 +13,13 @@ class Flight < ApplicationRecord
     departure_time.strftime("%d/%m/%Y")
   end
 
+  def booked_seats
+    self.bookings.sum("num_tickets")
+  end
+
+  def available_seats
+    self.max_passengers - self.booked_seats
+  end
+
   # Validate that destination is not same as departure
 end

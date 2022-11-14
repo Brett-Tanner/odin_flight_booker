@@ -41,7 +41,8 @@ Flight.create([{
   duration: 3.5,
   ticket_price: 500,
   arrival_airport_id: 1,
-  departure_airport_id: 2
+  departure_airport_id: 2,
+  max_passengers: 200
 },
 {
   code: "ZZ786",
@@ -50,7 +51,8 @@ Flight.create([{
   duration: 12,
   ticket_price: 560,
   arrival_airport_id: 3,
-  departure_airport_id: 4
+  departure_airport_id: 4,
+  max_passengers: 200
 },
 {
   code: "UU696",
@@ -59,7 +61,8 @@ Flight.create([{
   duration: 3.3,
   ticket_price: 340,
   arrival_airport_id: 5,
-  departure_airport_id: 1
+  departure_airport_id: 1,
+  max_passengers: 200
 },
 {
   code: "PP888",
@@ -68,7 +71,8 @@ Flight.create([{
   duration: 8.33,
   ticket_price: 233,
   arrival_airport_id: 4,
-  departure_airport_id: 2
+  departure_airport_id: 2,
+  max_passengers: 200
 },
 {
   code: "TRE45",
@@ -77,7 +81,8 @@ Flight.create([{
   duration: 3.67,
   ticket_price: 898,
   arrival_airport_id: 3,
-  departure_airport_id: 1
+  departure_airport_id: 1,
+  max_passengers: 200
 },
 {
   code: "RET46",
@@ -86,7 +91,8 @@ Flight.create([{
   duration: 3.67,
   ticket_price: 898,
   arrival_airport_id: 3,
-  departure_airport_id: 1
+  departure_airport_id: 1,
+  max_passengers: 200
 }
 ])
 
