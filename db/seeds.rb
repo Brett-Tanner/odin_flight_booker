@@ -98,9 +98,32 @@ Flight.create([{
 
 p "Created 6 flights"
 
+Booking.destroy_all
+
+Booking.create([
+  {
+    num_tickets: 1,
+    flight_id: 1
+  },
+  {
+    num_tickets: 3,
+    flight_id: 3
+  },
+  {
+    num_tickets: 4,
+    flight_id: 4
+  },
+  {
+    num_tickets: 2,
+    flight_id: 3
+  }
+])
+
+p "Created 4 bookings"
+
 Passenger.destroy_all
 
-Passenger.create([
+Booking.find(3).passengers = Passenger.create([
   {
     name: "Brett",
     email: "b@gmail.com"
@@ -119,31 +142,14 @@ Passenger.create([
   }
 ])
 
-p "Created 4 passengers"
+Booking.first.passengers << Passenger.first
 
-Booking.destroy_all
+(2..4).each do |i|
+  Booking.find(2).passengers << Passenger.find(i)
+end
 
-Booking.create([
-  {
-    num_tickets: 1,
-    flight_id: 1,
-    passenger_id: 2
-  },
-  {
-    num_tickets: 3,
-    flight_id: 3,
-    passenger_id: 4
-  },
-  {
-    num_tickets: 4,
-    flight_id: 4,
-    passenger_id: 2
-  },
-  {
-    num_tickets: 2,
-    flight_id: 3,
-    passenger_id: 1
-  }
-])
+(1..2).each do |i|
+  Booking.find(4).passengers << Passenger.find(i)
+end
 
-p "Created 4 bookings"
+p "Created 4 passengers and associated with Bookings"
