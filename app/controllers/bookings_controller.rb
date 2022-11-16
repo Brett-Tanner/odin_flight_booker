@@ -3,7 +3,12 @@ class BookingsController < ApplicationController
     @booking = Booking.new(num_tickets: params[:num_tickets], 
                            flight_id: params[:flight_id]
                           )
-    @passenger_list = Array.new(params[:num_tickets], Passenger.new)
+
+    @flight = Flight.find(params[:flight_id])
+    
+    params[:num_tickets].to_i.times do |i|
+      @booking.passengers << Passenger.new
+    end
   end
 
   def create

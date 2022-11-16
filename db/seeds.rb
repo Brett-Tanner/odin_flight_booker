@@ -115,7 +115,7 @@ Booking.create([
   },
   {
     num_tickets: 2,
-    flight_id: 3
+    flight_id: 2
   }
 ])
 

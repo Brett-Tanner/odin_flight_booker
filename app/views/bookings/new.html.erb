@@ -1,0 +1,28 @@
+<%= form_with model: @booking do |form| %>
+    <%= form.hidden_field :flight_id %>
+
+    <div class="booking_field flight_details">
+        <%= @flight.formatted_departure_date %>
+        <%= @flight.departure_airport.code %>
+        <%= @flight.arrival_airport.code %>
+        <%= @flight.code %>
+    </div>
+
+    <div class="booking_field">
+        <%= form.label :num_tickets, "Tickets" %>
+        <%= form.number_field :num_tickets, disabled: true %>
+    </div>
+
+    <%= form.fields_for :passengers do |passengers_form| %>
+        <div class="booking_field passenger_field">
+            <%= passengers_form.label :name, "Name:" %>
+            <%= passengers_form.text_field :name %>
+        </div>
+        <div class="booking_field passenger_field">
+            <%= passengers_form.label :email, "Email:" %>
+            <%= passengers_form.email_field :email %>
+        </div>
+    <% end %>
+
+    <%= form.submit "Confirm Booking" %>
+<% end %>
