@@ -1,0 +1,6 @@
+<%= booking.id %>
+<%= "#{booking.flight.code} to #{booking.flight.arrival_airport.name}" %>
+<%= booking.flight.formatted_departure_date %>
+<% booking.passengers.each do |passenger| %>
+    <%= passenger.name %>
+<% end %>
